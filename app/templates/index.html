@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block header %}
+        <h1>Favorite Colors!</h1>
+        <h4>Welcome {{ first_name }}</h4>
+            {% if first_name=='Christian' %}
+                <h5>What a cool name</h5>
+            {% else %}
+                <h5>Here are the best colors in town</h5>
+            {% endif %}
+       {% endblock header %}
+{% block content %}
+    <ul>
+        {% for color in colors %}
+            <li><div class="card" style="width: 18rem;">
+                <img src="{{color.pic_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{color.name}}</h5>
+                </div>
+              </div></li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Sign Up {% endblock title %}
+
+{% block header %}
+    <h1>Number 1 color</h1>
+{% endblock header %}
+
+
+{% block content %}
+<ul>
+    {% for color in colors %}
+    <img src="{{color.pic_url}}" class="img-fluid" alt="...">
+    {% endfor %}
+</ul>
+{% endblock content %}
+
