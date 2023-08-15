@@ -3,7 +3,7 @@
 {% block title %} Home {% endblock title %}
 
 {% block header %}
-        <h1>Favorite Colors!</h1>
+        <h1 class="title">Favorite Colors!</h1>
         <h4>Welcome {{ first_name }}</h4>
             {% if first_name=='Christian' %}
                 <h5>What a cool name</h5>
@@ -14,9 +14,9 @@
 {% block content %}
     <ul>
         {% for color in colors %}
-            <li><div class="card" style="width: 18rem;">
-                <img src="{{color.pic_url}}" class="card-img-top" alt="...">
-                <div class="card-body">
+            <li><div class="card"  style="width: 18rem;">
+                <img src="{{color.pic_url}}" class="d-flex justify-content-center" alt="...">
+                <div class="d-flex justify-content-center">
                   <h5 class="card-title">{{color.name}}</h5>
                 </div>
               </div></li>
