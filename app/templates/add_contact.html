@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+           <!-- Bring in Bootstrap CSS -->
+           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+           <!-- Bring in our own CSS -->
+           <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <title>Add Contact</title>
     <style>
         body {
@@ -53,7 +58,7 @@
         {{ form.phone_number(size=20) }}
         <label>{{ form.address.label }}</label>
         {{ form.address(size=64) }}
-        <p><button type="submit">Add Contact</button></p>
+        <p><button type="submit" class="btn btn-outline-info">Submit</button></p>
     </form>
 </body>
 </html>
