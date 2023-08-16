@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Contact</title>
+    <style>
+        body {
+            background-color: blue;
+            font-family: "Sofia", sans-serif;
+            font-size: 30px;
+            text-shadow: 3px 3px 3px #ababab;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin-bottom: 10px;
+        }
+        input {
+            margin-bottom: 20px;
+            padding: 5px;
+            font-size: 20px;
+        }
+        button {
+            background-color: white;
+            color: blue;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Contact</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label>{{ form.first_name.label }}</label>
+        {{ form.first_name(size=32) }}
+        <label>{{ form.last_name.label }}</label>
+        {{ form.last_name(size=32) }}
+        <label>{{ form.phone_number.label }}</label>
+        {{ form.phone_number(size=20) }}
+        <label>{{ form.address.label }}</label>
+        {{ form.address(size=64) }}
+        <p><button type="submit">Add Contact</button></p>
+    </form>
+</body>
+</html>
+

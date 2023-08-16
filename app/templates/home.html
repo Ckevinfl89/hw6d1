@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phonebook</title>
+    <style>
+        body {
+            background-color: blue;
+            font-family: "Sofia", sans-serif;
+            font-size: 30px;
+            text-shadow: 3px 3px 3px #ababab;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact List</h1>
+    <ul>
+        {% for contact in contacts %}
+            {% if contact.date_created >= last_loaded_date %}
+                <li>{{ contact.first_name }} {{ contact.last_name }} - {{ contact.phone_number }} - {{ contact.address }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <div class="add-button">
+        <a href="{{ url_for('add_contact') }}"><button type="button" class="btn btn-outline-info">Add contact</button></a>
+    </div>
+    <script>
+        var last_loaded_date = '{{ last_loaded_date }}';
+    </script>
+</body>
+</html>
+
+
+
+
